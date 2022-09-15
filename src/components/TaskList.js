@@ -1,9 +1,11 @@
 import React from "react";
+import NewTaskForm from "./NewTaskForm";
+import Task from "./Task";
 
-function TaskList() {
+function TaskList(props) {
   return (
     <div className="tasks">
-      {/* display a list of tasks using Task component */}
+      {props.tasks.map(task => <Task key = {task.text} task = {task} handleDelete= {props.handleDelete} />)}
     </div>
   );
 }
